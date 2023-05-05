@@ -8,21 +8,26 @@
     <title>Conversor de Temperatura</title>
 </head>
 <body>
-   
     <div style="text-align: center; ">
         <h1>Calculadora de Temperatura</h1>
+        <!--Aqui o usuário informa o valor que ele quer converter-->
         <input type="number" id="tempValor" placeholder="Digite a Temperatura"><br><br>
         <!--Para o usuário poder selecionar apenas uma das opções, todos os names dos inputs tipo radio
-        tem que estar como mesmo nome. Caso o contrário, ele pode selecionar mais de um-->
+        tem que estar como mesmo nome. Caso o contrário, ele pode selecionar mais de um. Cada botão
+        tem um id para identifica-lo depois na parte lógica-->
         <input type="radio" name="a" value="farenToCelsius" id="fc">Fahrenheit para Celsius</input><br>
         <input type="radio" name="a" value="celsiusToFaren" id="cf">Celsius para Fahrenheit</input><br>
         <input type="radio" name="a" value="kelvinToCelsius" id="kc">Kelvin para Celsius</input><br>
         <input type="radio" name="a" value="celsiusToKelvin" id="ck">Celsius para Kelvin</input><br>
         <input type="radio" name="a" value="farenToKelvin" id="fk">Fahrenheit para Kelvin</input><br>
         <input type="radio" name="a" value="kelvinToFaren" id="kf">Kelvin para Farenheit</input><br><br>
+        <!--Quando clicado, o botão ativa a função converte() no javascript, o qual ativa toda a parte
+        lógica do código-->
         <button id="botao" onclick="converte()">Converter</button><br><br><br>
+        <!--Aqui são mostrados os resultados depois do cálculo-->
         <h3 id="resultado"></h3>
     </div>
 </body>
 </html>
+<!--Aqui a parte lógica em JavaScript é referênciada-->
 <script src="index.js"></script>

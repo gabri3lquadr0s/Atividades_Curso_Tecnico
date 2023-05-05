@@ -3,23 +3,19 @@ body{
     background-size: cover;
 }
 
-
 h1{
     color: red;
 }
-
 
 #botao{
     border-radius: 15px;
     height: 25px;
 }
 
-
 #tempValor{
     border-radius: 15px;
     height: 25px;
 }
-
 
 #resultado{
     size: 30px;
