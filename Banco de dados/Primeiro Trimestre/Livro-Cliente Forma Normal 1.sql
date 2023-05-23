@@ -40,3 +40,20 @@ CREATE TABLE livro_reserva(
     FOREIGN KEY (id_pk_fk) REFERENCES cliente (id_pk),
     FOREIGN KEY (isbn_pk_fk) REFERENCES livro (isbn_pk)
 );
+
+INSERT INTO livro (isbn_pk, titulo, autor, editora, ano_publicacao, franquia_livraria, secao_livraria, prateleira_livraria)
+VALUES ('1234567890123', 'O Poderoso Chefão', 'Mario Puzzo', 'Horse', '1968', 'Livraria Palhoça', '2', '4')
+
+INSERT INTO genero (isbn_pk_fk, genero_pk)
+VALUES ('1234567890123', 'Drama')
+
+INSERT INTO cliente (id_pk, nome, data_nascimento, email, numero_cartao, dono_cartao, cpf_dono, codigo_seguranca)
+VALUES ('1', 'Adalberto', '07101980', 'adalbertomtopica@mail.com', '1234567890098765', 'ADALBERTO SILVA', '789654120365489', '987')
+
+INSERT INTO livro_reserva(codigo_reserva_pk, id_pk_fk, isbn_pk_fk)
+VALUES ('123', '1', '1234567890123')
+
+SELECT * FROM livro
+SELECT * FROM genero
+SELECT * FROM cliente
+SELECT * FROM livro_reserva
