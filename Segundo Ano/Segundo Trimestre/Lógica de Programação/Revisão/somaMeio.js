@@ -9,4 +9,4 @@ function somaMeio(num1, num2){
 console.log(somaMeio(1,10))
 console.log(somaMeio(2,5))
 console.log(somaMeio(20,37))
-console.log(somaMeio(10,11))
+console.log(somaMeio(10,110))
