@@ -1,10 +1,11 @@
- function fibonacci(num){
-    var sequence = [1]
-    for(var i = 0; i < num; i++){
-        var a = sequence[i]
-        var b = a+i
-        sequence.push(b)
-    }
-    return(sequence)
-}
-console.log(fibonacci(10))
+function fibonacci(num){
+    var sequence = []
+    var a = 0, b = 1, n = a + b
+    sequence.push(a, b, b)
+    for(i = 3; i < num; i++){
+        a = b
+        b = n
+        n = a + b
+        sequence.push(n)
+    } return(sequence)
+} console.log(fibonacci(20))
