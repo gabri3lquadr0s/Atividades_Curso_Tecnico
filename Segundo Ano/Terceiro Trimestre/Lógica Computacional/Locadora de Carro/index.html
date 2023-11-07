@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>LocaClone</title>
+</head>
+<body>
+    <h1>LocaClone</h1>
+    <h2>Create Car</h2>
+    <div id="registerCar">
+        <form action="" method="POST" id="registerCarForm" onsubmit="newCar()">
+            <input type="text" name="plate" id="plate" required="required" maxlength="7">
+            <input type="number" name="year" id="year" required="required" min="1900" max="2023">
+            <input type="text" name="brand" id="brand" required="required">
+            <input type="color" name="color" id="color" required="required">
+            <input type="text" name="model" id="model" required="required">
+            <input type="text" name="renter" id="renter">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+------------------------------------------------------------------------------------------
+    <!-- <div id="registerRenter">
+        <form id="registerRenterForm">
+
+            <input type="text" name="renter" id="renterName" required="required">
+            <input type="submit" value="Submit">
+        </form>
+    </div> -->
+    <div id="carList">
+        <input type="text" name="plate" id="getPlate" required="required" maxlength="7">
+        <button id="listCars" onclick="getCars()">List Cars</button>
+        <ul id="list"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
