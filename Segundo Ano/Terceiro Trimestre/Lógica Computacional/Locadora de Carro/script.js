@@ -1,6 +1,5 @@
 /*
         ----TODO---- 
-FIX ISSUE OF MULTIPLE DATA BEING SENT AT ONCE
 ADD VALIDATION FOR CAR INFORMATION SENT TO SCRIPT
 SAVE INFORMATION IN JSON FILE FOR PERMANENT DATA STORAGE(USE BROWSERIFY LIB)
         ------------
@@ -18,33 +17,34 @@ function Car(plate, year, brand, color, model, isRented, renter) {
     this.renter = renter;
 }
 
+/*REGISTER A CAR LOGIC*/
+var form = document.getElementById('registerCarForm');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    newCar();
+})
 function newCar() {
-    let form = document.getElementById('registerCarForm');
-    form.addEventListener('submit',(e) => {
-        console.log(e)
-        e.preventDefault();
-        let newCar = new Car(
-            document.getElementById('plate').value,
-            document.getElementById('year').value,
-            document.getElementById('brand').value,
-            document.getElementById('color').value,
-            document.getElementById('model').value,
-            false,
-            ''
-        );
-        console.log(newCar);
-        carList.push(newCar);
-        console.log(carList);
-    })
+    let newCar = new Car(
+        document.getElementById('plate').value,
+        document.getElementById('year').value,
+        document.getElementById('brand').value,
+        document.getElementById('color').value,
+        document.getElementById('model').value,
+        false,
+        ''
+    );
+    console.log(newCar);
+    carList.push(newCar);
+    console.log(carList);
     return true;
 }
 
+/*GET CARS LIST LOGIC*/
 /*    
         ----TODO---- 
 RESOLVE OBJ RETURN STYLE TO HTML
         ------------
 */
-
 function getCars() {
     let form = document.getElementById('carListForm');
     form.addEventListener('submit',(e) => {
@@ -96,39 +96,39 @@ function getCars() {
     });
 }
 
+/*RENT CARS LOGIC*/
 /* 
         ----TODO---- 
-FIX ISSUE OF MULTIPLE DATA BEING SENT AT ONCE(AGAIN)
         ------------
 */
-
+var form1 = document.getElementById('carRentForm');
+form1.addEventListener('submit', (e) => {
+    e.preventDefault();
+    rentCar();
+})
 function rentCar() {
     let plateSent = document.getElementById('carToRent').value;
-    let form = document.getElementById('carRentForm');
     let message = document.getElementById('message1');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        message.innerHTML = ''
-        let result = carList.filter(obj=> {
-            if(obj.plate == plateSent) {
-                if(document.getElementById('rent').checked && obj.isRented == false) {
-                    let renter = document.getElementById('renter').value;
-                    obj.isRented = true;
-                    obj.renter = renter;
-                    console.log(obj)
-                    return message.innerHTML = `${plateSent} is now rented to ${renter}`;
-                } else if(document.getElementById('unrent').checked) {
-                    obj.isRented = false;
-                    obj.renter = '';
-                    console.log(obj)
-                    return message.innerHTML = `${plateSent} is now free for renting`;
-                } else if(document.getElementById('rent').checked && obj.isRented == true) {
-                    console.log(obj)
-                    return message.innerHTML = `${plateSent} is already rented`;
-                }
-            } else {
-                return message.innerHTML = `${plateSent} not found`;
+    message.innerHTML = ''
+    let result = carList.filter(obj=> {
+        if(obj.plate == plateSent) {
+            if(document.getElementById('rent').checked && obj.isRented == false) {
+                let renter = document.getElementById('renter').value;
+                obj.isRented = true;
+                obj.renter = renter;
+                console.log(obj)
+                return message.innerHTML = `${plateSent} is now rented to ${renter}`;
+            } else if(document.getElementById('unrent').checked) {
+                obj.isRented = false;
+                obj.renter = '';
+                console.log(obj)
+                return message.innerHTML = `${plateSent} is now free for renting`;
+            } else if(document.getElementById('rent').checked && obj.isRented == true) {
+                console.log(obj)
+                return message.innerHTML = `${plateSent} is already rented`;
             }
-        }) 
-    })
+        } else {
+            return message.innerHTML = `${plateSent} not found`;
+        }
+    }) 
 }
