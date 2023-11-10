@@ -1,12 +1,3 @@
-/*
-        ----TODO---- 
-ADD VALIDATION FOR CAR INFORMATION SENT TO SCRIPT
-SAVE INFORMATION IN JSON FILE FOR PERMANENT DATA STORAGE(USE BROWSERIFY LIB)
-        ------------
-*/
-
-var carList = [{"plate":"fgh123", "year":1920, "brand":"wolksvager", "color":"1236FF", "model":"gol", "isRented":true, "renter":"gabriel"},{"plate":"123456", "year":1927, "brand":"wolksvager", "color":"5556FF", "model":"gol", "isRented":false, "renter":""} ,{"plate":"asd123", "year":1900, "brand":"ford", "color":"0066FF", "model":"ka", "isRented":false, "renter":""}];
-
 function Car(plate, year, brand, color, model, isRented, renter) {
     this.plate = plate;
     this.year = year;
@@ -17,6 +8,10 @@ function Car(plate, year, brand, color, model, isRented, renter) {
     this.renter = renter;
 }
 
+var carList = [{"plate":"fgh123", "year":1920, "brand":"wolksvager", "color":"1236FF", "model":"gol", "isRented":true, "renter":"gabriel"}, 
+{"plate":"123456", "year":1927, "brand":"wolksvager", "color":"5556FF", "model":"gol", "isRented":false, "renter":""},
+{"plate":"asd123", "year":1900, "brand":"ford", "color":"0066FF", "model":"ka", "isRented":false, "renter":""}];
+
 /*REGISTER A CAR LOGIC*/
 var form = document.getElementById('registerCarForm');
 form.addEventListener('submit', (e) => {
@@ -24,6 +19,8 @@ form.addEventListener('submit', (e) => {
     newCar();
 })
 function newCar() {
+    let message = document.getElementById('message2')
+    message.innerHTML = '';
     let newCar = new Car(
         document.getElementById('plate').value,
         document.getElementById('year').value,
@@ -33,18 +30,22 @@ function newCar() {
         false,
         ''
     );
+    //THIS DOES NOT WORK
+    carList.forEach(element => {
+        if(element.plate == newCar.plate) {
+            throw message.innerHTML = `${newCar.plate} already exists`;
+        }
+    });
+    //
     console.log(newCar);
     carList.push(newCar);
     console.log(carList);
-    return true;
+    console.log(newCar.plate);
+    return message.innerText = `${newCar.plate} fully registred`
+    
 }
 
 /*GET CARS LIST LOGIC*/
-/*    
-        ----TODO---- 
-RESOLVE OBJ RETURN STYLE TO HTML
-        ------------
-*/
 function getCars() {
     let form = document.getElementById('carListForm');
     form.addEventListener('submit',(e) => {
@@ -97,10 +98,6 @@ function getCars() {
 }
 
 /*RENT CARS LOGIC*/
-/* 
-        ----TODO---- 
-        ------------
-*/
 var form1 = document.getElementById('carRentForm');
 form1.addEventListener('submit', (e) => {
     e.preventDefault();
