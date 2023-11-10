@@ -8,45 +8,53 @@
     <title>LocaClone</title>
 </head>
 <body>
-    <h1>LocaClone</h1>
-    <h2>Create Car</h2>
-    <div id="registerCar">
-        <form action="" method="POST" id="registerCarForm">
-            <input type="text" name="plate" id="plate" required="required" maxlength="7" placeholder="Plate">
-            <input type="number" name="year" id="year" required="required" min="1900" max="2023" placeholder="Year">
-            <input type="text" name="brand" id="brand" required="required" placeholder="Brand">
-            <input type="color" name="color" id="color" required="required">
-            <input type="text" name="model" id="model" required="required" placeholder="Model">
-            <button type="submit" onclick="newCar()">Submit</button>
-        </form>
+    <header>
+        <h1>LocaClone</h1>
+        <p>Your Car Locator of Choice</p>
+    </header>
+
+    <div id="main">
+        <h2>Create Car</h2>
+        <div id="registerCar">
+            <form action="" method="POST" id="registerCarForm">
+                <input type="text" name="plate" id="plate" required="required" maxlength="7" placeholder="Plate">
+                <input type="number" name="year" id="year" required="required" min="1900" max="2023" placeholder="Year">
+                <input type="text" name="brand" id="brand" required="required" placeholder="Brand">
+                <input type="color" name="color" id="color" required="required">
+                <input type="text" name="model" id="model" required="required" placeholder="Model">
+                <button type="submit" onclick="newCar()">Submit</button>
+            </form>
+        </div>
+
+        <h2>Find a Car</h2>
+        <div id="carList">
+            <form action="" id="carListForm">
+                <input type="text" name="plate" id="getPlate" placeholder="Plate, Model or Brand">
+                <input type="radio" name="asd" id="getCarByRent">
+                <label for="">getCarByRent</label>
+                <input type="radio" name="asd" id="getCarByNotRent">
+                <label for="">getCarByNotRent</label>
+                <button type="submit" onclick="getCars()" value="Reset form">List Cars</button>
+            </form>
+            <h3 id="message"></h3>
+            <ul id="list"></ul>
+        </div>
+
+        <h2>Rent a Car</h2>
+        <div id="rentCar">
+            <form action="" method="POST" id="carRentForm">
+                <input type="text" name="car" id="carToRent" required="required" placeholder="Plate">
+                <input type="text" name="renter" id="renter" placeholder="Name">
+                <input type="radio" name="dsa" id="rent" required="required">
+                <label for="">Rent</label>
+                <input type="radio" name="dsa" id="unrent" required="required">
+                <label for="">Unrent</label>
+                <button type="submit" onclick="rentCar()">Done</button>
+            </form>
+            <h3 id="message1"></h3>
+        </div>
     </div>
-------------------------------------------------------------------------------------------
-    <div id="carList">
-        <form action="" id="carListForm">
-            <input type="text" name="plate" id="getPlate" placeholder="Plate, Model or Brand">
-            <input type="radio" name="asd" id="getCarByRent">
-            <label for="">getCarByRent</label>
-            <input type="radio" name="asd" id="getCarByNotRent">
-            <label for="">getCarByNotRent</label>
-            <button type="submit" onclick="getCars()" value="Reset form">List Cars</button>
-        </form>
-        <h3 id="message"></h3>
-        <ul id="list"></ul>
-    </div>
-------------------------------------------------------------------------------------------
-    <div id="rentCar">
-        <form action="" method="POST" id="carRentForm">
-            <input type="text" name="car" id="carToRent" required="required" placeholder="Plate">
-            <input type="text" name="renter" id="renter" placeholder="Name">
-            <input type="radio" name="dsa" id="rent" required="required">
-            <label for="">Rent</label>
-            <input type="radio" name="dsa" id="unrent" required="required">
-            <label for="">Unrent</label>
-            <button type="submit" onclick="rentCar()">Done</button>
-        </form>
-        <h3 id="message1"></h3>
-    </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

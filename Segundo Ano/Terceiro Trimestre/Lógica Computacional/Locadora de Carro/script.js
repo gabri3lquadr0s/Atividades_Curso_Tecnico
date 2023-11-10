@@ -1,8 +1,8 @@
 /*
         ----TODO---- 
-ADD VALIDATION FOR CAR INFORMATION SENT TO SCRIPT
-SAVE INFORMATION IN JSON FILE FOR PERMANENT DATA STORAGE(USE BROWSEFIY LIB)
 FIX ISSUE OF MULTIPLE DATA BEING SENT AT ONCE
+ADD VALIDATION FOR CAR INFORMATION SENT TO SCRIPT
+SAVE INFORMATION IN JSON FILE FOR PERMANENT DATA STORAGE(USE BROWSERIFY LIB)
         ------------
 */
 
@@ -21,6 +21,7 @@ function Car(plate, year, brand, color, model, isRented, renter) {
 function newCar() {
     let form = document.getElementById('registerCarForm');
     form.addEventListener('submit',(e) => {
+        console.log(e)
         e.preventDefault();
         let newCar = new Car(
             document.getElementById('plate').value,
@@ -74,53 +75,59 @@ function getCars() {
                     let listElement = document.createElement('li');
                     listElement.innerText = JSON.stringify(arr[i]);
                     list.appendChild(listElement);
-                } document.getElementById('getCarByRent').checked=false; 
-                return;
-            } else if(document.getElementById('getCarByNotRent')) {
+                } return;
+            } else if(document.getElementById('getCarByNotRent').checked) {
                 let result = carList.filter(obj => {
                     if(obj.isRented == false) arr.push(obj);
                 }); if(arr.length == 0) return message.innerHTML = `No cars free in the moment`;
                 for(var i = 0; i < arr.length; i++) {
                     let listElement = document.createElement('li');
+                    listElement.innerText = JSON.stringify(arr[i]);
+                    list.appendChild(listElement);
+                } return;
+            } else {
+                for(var i = 0; i < carList.length; i++) {
+                    let listElement = document.createElement('li');
                     listElement.innerText = JSON.stringify(carList[i]);
                     list.appendChild(listElement);
-                } document.getElementById('getCarByNotRent').checked=false; 
-                return;
+                } return;
             }
-            for(var i = 0; i < carList.length; i++) {
-                let listElement = document.createElement('li');
-                listElement.innerText = JSON.stringify(carList[i]);
-                list.appendChild(listElement);
-            } return;
-    }
+        }
     });
 }
 
 /* 
         ----TODO---- 
-FIX VALIDATION RENT AND UNRENT
-VISUAL VALIDATION FOR ACTION
+FIX ISSUE OF MULTIPLE DATA BEING SENT AT ONCE(AGAIN)
         ------------
 */
 
 function rentCar() {
-    let renter = document.getElementById('renter').value;
     let plateSent = document.getElementById('carToRent').value;
     let form = document.getElementById('carRentForm');
+    let message = document.getElementById('message1');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        message.innerHTML = ''
         let result = carList.filter(obj=> {
             if(obj.plate == plateSent) {
                 if(document.getElementById('rent').checked && obj.isRented == false) {
+                    let renter = document.getElementById('renter').value;
                     obj.isRented = true;
                     obj.renter = renter;
-                    console.log(obj);
+                    console.log(obj)
+                    return message.innerHTML = `${plateSent} is now rented to ${renter}`;
                 } else if(document.getElementById('unrent').checked) {
                     obj.isRented = false;
                     obj.renter = '';
+                    console.log(obj)
+                    return message.innerHTML = `${plateSent} is now free for renting`;
+                } else if(document.getElementById('rent').checked && obj.isRented == true) {
+                    console.log(obj)
+                    return message.innerHTML = `${plateSent} is already rented`;
                 }
             } else {
-                document.getElementById('message1').innerHTML = `${plateSent} not found`;
+                return message.innerHTML = `${plateSent} not found`;
             }
         }) 
     })

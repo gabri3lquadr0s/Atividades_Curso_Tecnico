@@ -1,3 +1,15 @@
-/*
-WHERE, WHERE IS THE CSS?
-*/ 
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+}
+
+header{
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+#main {
+    text-align: center;
+}
