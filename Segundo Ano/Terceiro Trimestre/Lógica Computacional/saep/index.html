@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airplane</title>
+</head>
+<style>
+    li {
+        margin-top: 15px;
+    }
+</style>
+<body>
+    <h1>Airplane.js Demonstration</h1>
+    <div>
+        <input type="number" id="plane" min="1" max="15" placeholder="Id">
+        <input type="number" id="seat" min="1" max="68" placeholder="Seat">
+        <input type="text" id="passenger" placeholder="Passenger Name">
+        <button onclick="rentSeat()">Rent</button>
+        <button onclick="removeSeat()">Unrent</button>
+        <button onclick="listAllPlanes()">List All Planes</button>
+    </div>
+    <div id="msg"></div>
+    <ul id="list"></ul>
+<script src="airplane.js"></script>
+</body>
+</html>
