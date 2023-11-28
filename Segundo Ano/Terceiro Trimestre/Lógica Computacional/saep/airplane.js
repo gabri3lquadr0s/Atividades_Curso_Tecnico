@@ -36,9 +36,6 @@ function rentSeat() {
 
     agency.forEach(element => {
         if(element.id === id) {
-            // if(id > agency.length - 1) {
-            //     id--;
-            // }
             agency[id - 1].seats.forEach(element => {
                 if(element.id === seat) {
                     obj = element;
