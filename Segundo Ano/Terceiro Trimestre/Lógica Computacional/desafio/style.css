@@ -1,0 +1,21 @@
+.square {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #555;
+}
+
+#sqr1 {
+    accent-color: red;
+}
+#sqr2 {
+    accent-color: blue;
+}
+#sqr3 {
+    accent-color: green;
+}
+#sqr4 {
+    accent-color: yellow;
+}
