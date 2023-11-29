@@ -1,21 +1,106 @@
-.square {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    border-style: solid;
-    border-width: 10px;
-    border-color: #555;
-}
-
 #sqr1 {
     accent-color: red;
 }
+#sq1 {
+    background-color: red;
+}
+
 #sqr2 {
     accent-color: blue;
 }
+#sq2 {
+    background-color: blue;
+}
+
 #sqr3 {
     accent-color: green;
 }
+#sq3 {
+    background-color: green;
+}
+
 #sqr4 {
     accent-color: yellow;
+}
+#sq4 {
+    background-color: yellow;
+}
+
+#sqr5 {
+    accent-color: hotpink;
+}
+#sq5 {
+    background-color: hotpink;
+}
+
+#sqr6 {
+    accent-color: blueviolet;
+}
+#sq6 {
+    background-color: blueviolet;
+}
+
+#sqr7 {
+    accent-color: chocolate;
+}
+#sq7 {
+    background-color: chocolate;
+}
+
+#sqr8 {
+    accent-color: lime;
+}
+#sq8 {
+    background-color: lime;
+}
+
+#sqr9 {
+    accent-color:  cornflowerblue;
+}
+#sq9 {
+    background-color: cornflowerblue;
+}
+
+#sqr10 {
+    accent-color: darkslategray;
+}
+#sq10 {
+    background-color: darkslategray;
+}
+
+input[type="checkbox"] {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.asd {
+    display: inline-block;
+}
+#main {
+    text-align: center;
+}
+button {
+    border-radius: 15px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+button:hover {
+    background-color: chartreuse;
+}
+#btnDiv {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    margin-left: 655px;
+    width: 610px;
+}
+#ans {
+    margin-left: 450px;
+    width: 1000px;
+    text-align: center;
+}
+#tabuadas {
+    width: 836px;
+    height: 384px;
+    margin-left: 540px;
 }

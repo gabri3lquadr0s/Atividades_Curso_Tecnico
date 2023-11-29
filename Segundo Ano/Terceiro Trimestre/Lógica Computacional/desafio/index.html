@@ -7,26 +7,33 @@
     <title>Jogo das Tabuada</title>
 </head>
 <body>
-    <div>
-        <h1>Jogo da Tabuada e Cores</h1>
-        <!-- <h2>Daltônicos n podem jogar</h2> -->
-        <h3 id="asd"></h3>
-        <button onclick="getRandomValue()">clica corno</button>
+    <div id="main">
+        <h2>Em quais tabuadas esse número está?</h2>
+        <h4>Escolha uma das caixas correspondentes as tabuadas pela cor.</h4>
+        <h1 id="asd"></h1>
+        <button onclick="getRandomValue()">Gerar o número aleatório</button>
     </div>
-    <div style="margin-top: 20px; margin-bottom: 20px;">
-        <input type="checkbox" id="sqr1" class="square">
-        <input type="checkbox" id="sqr2" class="square">
-        <input type="checkbox" id="sqr3" class="square">
-        <input type="checkbox" id="sqr4" class="square">
-        <input type="checkbox" id="sqr5" class="square">
-        <input type="checkbox" id="sqr6" class="square">
-        <input type="checkbox" id="sqr7" class="square">
-        <input type="checkbox" id="sqr8" class="square">
-        <input type="checkbox" id="sqr9" class="square">
-        <input type="checkbox" id="sqr10" class="square">
+    <div id="tabuadas">
+        <img src="./media/tabuadas.png" width="836px" height="384px">
     </div>
-    <button onclick="theGameItself()">Mandar Resposta</button>
-    <h1 id="dsa"></h1>
+    <div id="btnDiv">
+        <div id="sq1" class="asd"><input type="checkbox" id="sqr1"></div>
+        <div id="sq2" class="asd"><input type="checkbox" id="sqr2"></div>
+        <div id="sq3" class="asd"><input type="checkbox" id="sqr3"></div>
+        <div id="sq4" class="asd"><input type="checkbox" id="sqr4"></div>
+        <div id="sq5" class="asd"><input type="checkbox" id="sqr5"></div>
+        <div id="sq6" class="asd"><input type="checkbox" id="sqr6"></div>
+        <div id="sq7" class="asd"><input type="checkbox" id="sqr7"></div>
+        <div id="sq8" class="asd"><input type="checkbox" id="sqr8"></div>
+        <div id="sq9" class="asd"><input type="checkbox" id="sqr9"></div>
+        <div id="sq10" class="asd"><input type="checkbox" id="sqr10"></div>
+    </div>
+    <div id="ans">
+
+        <button onclick="theGameItself()">Mandar Resposta</button>
+        <h1 id="dsa"></h1>
+    </div>
+    
 <script src="script.js"></script>
 </body>
 </html>

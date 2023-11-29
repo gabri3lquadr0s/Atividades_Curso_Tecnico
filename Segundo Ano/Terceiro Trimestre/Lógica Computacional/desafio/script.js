@@ -1,21 +1,13 @@
 /*VARIAVEIS GLOBAIS*/ 
-var globalSelectedNumber = 0;
+var globalSelectedNumber;
 var globalValues = [];
 var globalDivisibleBy = [];
 
 /*ELEMENTOS GLOBAIS*/
 var textNumber = document.getElementById('asd');
 var textResult = document.getElementById('dsa');
-var sqr1 = document.getElementById('sqr1');
-var sqr2 = document.getElementById('sqr2');
-var sqr3 = document.getElementById('sqr3');
-var sqr4 = document.getElementById('sqr4');
-var sqr5 = document.getElementById('sqr5');
-var sqr6 = document.getElementById('sqr6');
-var sqr7 = document.getElementById('sqr7');
-var sqr8 = document.getElementById('sqr8');
-var sqr9 = document.getElementById('sqr9');
-var sqr10 = document.getElementById('sqr10');
+var yay = new Audio('./media/yay.mp3');
+var bonk = new Audio('./media/bonk.mp3');
 
 /*FOR PARA POPULAR ARRAY COM TODOS OS ELEMENTOS DE TABUADA*/
 for(let i = 1; i <= 10; i++) {
@@ -24,46 +16,37 @@ for(let i = 1; i <= 10; i++) {
     }
 }
 
+/*FUNÇÃO PARA PEGAR O NÚMERO ALEATÓRIO E CALCULAR SEUS DIVISORES*/
 function getRandomValue() {
     textResult.innerText = '';
     globalDivisibleBy = [];
-    globalSelectedNumber = Math.floor(Math.random() * globalValues.length);
+    let randomIndex = Math.floor(Math.random() * globalValues.length);
+    globalSelectedNumber = globalValues[randomIndex];
     textNumber.innerText = globalSelectedNumber
     for(let i = 1; i <= 10; i++) {
-        if(globalSelectedNumber %  i === 0) {
+        if(globalSelectedNumber %  i === 0 && globalSelectedNumber / i <=10) {
             globalDivisibleBy.push(i);
         }
-    }
-    console.log(globalDivisibleBy)
+    } console.log(globalDivisibleBy)
 }
 
+/*CHECAGEM DO JOGO*/
 function theGameItself() {
-    let selectedNumbers = [];
-    if(sqr1.checked) {
-        selectedNumbers.push(1);
-    } if(sqr2.checked) {
-        selectedNumbers.push(2);
-    } if(sqr3.checked) {
-        selectedNumbers.push(3)
-    } if(sqr4.checked) {
-        selectedNumbers.push(4);
-    } if(sqr5.checked) {
-        selectedNumbers.push(5);
-    } if(sqr6.checked) {
-        selectedNumbers.push(6);
-    } if(sqr7.checked) {
-        selectedNumbers.push(7);
-    } if(sqr8.checked) {
-        selectedNumbers.push(8);
-    } if(sqr9.checked) {
-        selectedNumbers.push(9);
-    } if(sqr10.checked) {
-        selectedNumbers.push(10)
+    if(globalSelectedNumber == null) {
+        return alert('Gere um número');
     }
-    console.log(selectedNumbers)
+    let selectedNumbers = [];
+    for(let i = 1; i <= 10; i++) {
+        if(document.getElementById(`sqr${i}`).checked) {
+            selectedNumbers.push(i);
+        }
+    }
+    if(selectedNumbers.length == 0) return alert('Você não escolheu nenhuma resposta');
     if(selectedNumbers.toString() == globalDivisibleBy.toString()) {
-        textResult.innerText = "Acertou"
+        yay.play();
+        return textResult.innerText = 'Parabéns, você acertou!';
     } else {
-        textResult.innerText = "Burro"
+        bonk.play();
+        return textResult.innerText = 'Infelizmente você errou, tente novamente ou gere um novo número';
     }
 }
