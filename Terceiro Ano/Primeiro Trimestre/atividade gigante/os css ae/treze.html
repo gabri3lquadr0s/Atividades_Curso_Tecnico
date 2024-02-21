@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>treze</title>
+</head>
+<style>
+    section{
+        margin: 200px auto;
+        width: 500px;
+        text-align: center;
+    }
+    form{
+        margin: 0 auto;
+    }
+    input, select{
+        display: block;
+        margin: 10px auto;
+        border-radius: 15px;
+        width: 200px;
+        height: 30px;
+    }
+    #submit{
+        color: white;
+        background-color: red;
+    }
+</style>
+<body>
+    <main>
+        <section>
+            <h1>Cadastra ae man</h1>
+            <form>
+                <input type="text" placeholder="Nome completo" required>
+                <input type="tel" placeholder="Telefone" required>
+                <input type="number" max="999999999999999" placeholder="Numero do Cartão" required>
+                <input type="number" max="999" placeholder="PIN" required>
+                <select>
+                    <option>Selecione uma opção</option>
+                    <option>Opção 1</option>
+                    <option>Opção 2</option>
+                </select>
+                <input type="submit" value="Enviar" id="submit" onclick="alert('congratulações')">
+            </form>
+        </section>
+    </main>
+</body>
+</html>
