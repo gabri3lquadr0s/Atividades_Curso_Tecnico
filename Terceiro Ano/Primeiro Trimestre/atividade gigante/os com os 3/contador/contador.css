@@ -1,0 +1,22 @@
+#area{
+    width: 400px;
+    height: 400px;
+    resize: none;
+}
+#area, input{
+    display: block;
+    margin: 10px auto;
+}
+input{
+    height: 70px;
+    width: 150px;
+    border-radius: 10px;
+}
+section{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: aqua;
+    color: black;
+}

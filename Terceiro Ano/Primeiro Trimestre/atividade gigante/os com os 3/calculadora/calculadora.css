@@ -1,0 +1,19 @@
+h1{
+    color: blue;
+    size: 30px;
+    }
+
+    .buttonNumbers{
+    height: 40px;
+    width: 40px;
+    }
+
+    #buttonZero{
+        width: 130px;
+        height: 40px;
+    }
+
+    .operation{
+        height: 30px;
+        width: 30px;
+    }

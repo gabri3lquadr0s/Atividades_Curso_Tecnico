@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+    <link rel="stylesheet" href="calculadora.css">
+</head>
+<body>    
+    <div style="text-align: center;">
+        <input id="display" type="text" disabled>
+    </div><br>
+   
+    <div style="text-align: center;">
+        <button class="buttonNumbers" onclick="addToDisplay(1)">1</button>
+        <button class="buttonNumbers" onclick="addToDisplay(2)">2</button>
+        <button class="buttonNumbers" onclick="addToDisplay(3)">3</button><br>
+        <button class="buttonNumbers" onclick="addToDisplay(4)">4</button>
+        <button class="buttonNumbers" onclick="addToDisplay(5)">5</button>
+        <button class="buttonNumbers" onclick="addToDisplay(6)">6</button><br>
+        <button class="buttonNumbers" onclick="addToDisplay(7)">7</button>
+        <button class="buttonNumbers" onclick="addToDisplay(8)">8</button>
+        <button class="buttonNumbers" onclick="addToDisplay(9)">9</button><br>
+        <button id="buttonZero" class="buttonNumbers" onclick="addToDisplay(0)">0</button>
+    </div><br>
+    <div style="text-align: center;">
+        <button class="operation" onclick="addToDisplay(`+`)">+</button>
+        <button class="operation" onclick="addToDisplay(`-`)">-</button>
+        <button class="operation" onclick="addToDisplay(`/`)">/</button>
+        <button class="operation" onclick="addToDisplay(`*`)">*</button>
+        <button class="operation" onclick="addToDisplay(`.`)">.</button>
+        <button class="operation" onclick="clear()" type="button">CE</button>
+        <button class="operation" onclick="result()">=</button>
+    </div>
+
+</body>
+<script src="calculadora.js"></script>
+</html>

@@ -1,0 +1,19 @@
+.sec{
+    margin: 150px auto;
+    text-align: center;
+    height: min-content;
+}
+.entorno{
+    width: 600px;
+    background-color:  aquamarine;
+    border-radius: 10px;
+    height: 130px;
+    margin: 0 auto;
+} 
+.relogio{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100px;
+}
+body{
+    background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p3/11208814-tecnologia-vector-background-analog-clock-time-vetor.jpg');
+}

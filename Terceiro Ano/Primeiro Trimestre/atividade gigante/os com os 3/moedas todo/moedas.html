@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="moedas.css">
+    <title>moedas</title>
+</head>
+<body>
+    <main>
+        <section>
+            <form>
+                <input type="number" required id="convert">
+                <select id="toConvert"></select>
+                <select id="convertTo"></select>
+                <input type="submit" value="Converter" id="btn" onclick="getExchangeRates()">
+            </form>
+        </section>
+        <section>
+            <h1 id="result"></h1>
+        </section>
+    </main>
+</body>
+<script src="moedas.js"></script>
+</html>
