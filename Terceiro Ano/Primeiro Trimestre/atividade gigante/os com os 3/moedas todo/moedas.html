@@ -9,7 +9,7 @@
 <body>
     <main>
         <section>
-            <form>
+            <form id="forms">
                 <input type="number" required id="convert">
                 <select id="toConvert"></select>
                 <select id="convertTo"></select>
@@ -21,5 +21,10 @@
         </section>
     </main>
 </body>
-<script src="moedas.js"></script>
+<script src="moedas.js">
+    let forms = document.getElementById('forms')
+    forms.addEventListener('submit', function(e){
+        e.preventDefault();
+    }) 
+</script>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+    <main>
+        <section>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="phone" placeholder="Telefone" pattern="[0-9]{11}" required>
+                <input type="date" id="dob" required>
+                <textarea id="message" placeholder="Mensagem" maxlength="3000" required></textarea>
+                <input type="file" id="attachment" required>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+        <section id="info"></section>
+    </main>
+    <script src="form.js"></script>
+</body>
+</html>

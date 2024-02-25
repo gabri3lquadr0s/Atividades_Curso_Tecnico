@@ -1,0 +1,31 @@
+img{
+    width: 400px;
+    height: 400px;
+    transition: 0.7;
+}
+img:hover{
+    scale: 1.2;
+    cursor: pointer;
+}
+section{
+    display: flex;
+    margin: 10% 10%;
+}
+figure{
+    border: 12px;
+    border-style: outset;
+    box-shadow: 20px -20px blue;
+}
+#fullpage {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-color: black;
+  }
